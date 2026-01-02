@@ -12,24 +12,6 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "slide_J9VDwb": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Slide1_365bc2f5-723f-4f6f-b0c3-b129f6c6136a.jpg",
-            "image_overlay_opacity": 0,
-            "heading": "Fast Mobile Fixes for Less!",
-            "heading_size": "h1",
-            "subheading": "Expert Repair Services for iPhones, iPads, Android Phones, and Tablets.",
-            "button_label": "Contact US",
-            "link": "shopify://pages/contact",
-            "button_style_secondary": true,
-            "show_text_box": true,
-            "box_align": "top-left",
-            "text_alignment": "left",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-5"
-          }
-        },
         "slide_1": {
           "type": "slide",
           "settings": {
@@ -47,11 +29,29 @@
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-5"
           }
+        },
+        "slide_J9VDwb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Slide1_365bc2f5-723f-4f6f-b0c3-b129f6c6136a.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "Fast Mobile Fixes for Less!",
+            "heading_size": "h1",
+            "subheading": "Expert Repair Services for iPhones, iPads, Android Phones, and Tablets.",
+            "button_label": "Contact US",
+            "link": "shopify://pages/contact",
+            "button_style_secondary": true,
+            "show_text_box": true,
+            "box_align": "top-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-5"
+          }
         }
       },
       "block_order": [
-        "slide_J9VDwb",
-        "slide_1"
+        "slide_1",
+        "slide_J9VDwb"
       ],
       "settings": {
         "layout": "full_bleed",
@@ -64,30 +64,36 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "services": {
-      "type": "multicolumn",
-      "settings": {
-        "title": "Our Services",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 5,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "1767330227dc762de3": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_95b43a7_eeN7Mn": {
+          "type": "ai_gen_block_95b43a7",
+          "settings": {
+            "image_1": "shopify://shop_images/Snipaste_2026-01-01_22-18-10.png",
+            "text_1": "Pre-owned phones with warranty.",
+            "image_2": "shopify://shop_images/Snipaste_2026-01-01_22-17-12.png",
+            "text_2": "We only use quality relialbeparts.",
+            "image_3": "shopify://shop_images/Snipaste_2026-01-01_22-16-40.png",
+            "text_3": "We offer same day service on most repairs.",
+            "image_4": "shopify://shop_images/Snipaste_2026-01-01_22-17-59.png",
+            "text_4": "We are famous for our screen repair service.",
+            "image_5": "shopify://shop_images/Snipaste_2026-01-01_22-17-45.png",
+            "text_5": "We specialize in Apple products (iPhones & iPads)",
+            "section_height": 5,
+            "section_height_mobile": 5,
+            "spacing": 16,
+            "image_border_radius": 8,
+            "text_size": 14,
+            "text_color": "#444444",
+            "spacing_mobile": 8,
+            "text_size_mobile": 8
+          },
+          "blocks": {}
+        },
         "ai_gen_block_998f4ee_HbrXew": {
           "type": "ai_gen_block_998f4ee",
+          "disabled": true,
           "settings": {
             "image_1": "shopify://shop_images/Snipaste_2026-01-01_22-17-12.png",
             "text_1": "We only use quality relialbeparts.",
@@ -99,10 +105,43 @@
             "text_4": "We specialize in Apple products (iPhones & iPads)",
             "image_5": "shopify://shop_images/Snipaste_2026-01-01_22-18-10.png",
             "text_5": "Pre-owned phones with warranty.",
-            "spacing": 32,
+            "spacing": 20,
             "image_border_radius": 0,
             "text_size": 14,
             "text_color": "#444444"
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_0f2ed23_9fNfzJ": {
+          "type": "ai_gen_block_0f2ed23",
+          "settings": {
+            "image": "shopify://shop_images/ban1_1.png",
+            "image_height": 100,
+            "mobile_image_height": 100,
+            "border_radius": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_2df702c_cGCqW7": {
+          "type": "ai_gen_block_2df702c",
+          "settings": {
+            "heading": "Featured products",
+            "heading_alignment": "center",
+            "heading_size": 26,
+            "heading_color": "#444444",
+            "rows": 2,
+            "columns_desktop": 4,
+            "columns_tablet": 3,
+            "columns_mobile": "2",
+            "grid_gap": 12,
+            "show_vendor": false,
+            "show_price": true,
+            "product_title_size": 12,
+            "product_price_size": 12,
+            "card_background": "#ffffff",
+            "text_color": "#444444",
+            "price_color": "#0286e7",
+            "card_border_radius": 8
           },
           "blocks": {}
         },
@@ -130,15 +169,22 @@
         }
       },
       "block_order": [
+        "ai_gen_block_95b43a7_eeN7Mn",
         "ai_gen_block_998f4ee_HbrXew",
+        "ai_gen_block_0f2ed23_9fNfzJ",
+        "ai_gen_block_2df702c_cGCqW7",
         "ai_gen_block_809cd12_pGUhHq"
       ],
+      "settings": {}
+    },
+    "17673334587d8f2078": {
+      "type": "_blocks",
       "settings": {}
     }
   },
   "order": [
     "slideshow",
-    "services",
-    "1767330227dc762de3"
+    "1767330227dc762de3",
+    "17673334587d8f2078"
   ]
 }
