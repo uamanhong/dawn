@@ -12,21 +12,22 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "slide_yBCcVm": {
+        "slide_J9VDwb": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Slide1_365bc2f5-723f-4f6f-b0c3-b129f6c6136a.jpg",
             "image_overlay_opacity": 0,
-            "heading": "Image slide",
+            "heading": "Fast Mobile Fixes for Less!",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
+            "subheading": "Expert Repair Services for iPhones, iPads, Android Phones, and Tablets.",
+            "button_label": "Contact US",
+            "link": "shopify://pages/contact",
+            "button_style_secondary": true,
             "show_text_box": true,
-            "box_align": "middle-center",
-            "text_alignment": "center",
+            "box_align": "top-left",
+            "text_alignment": "left",
             "text_alignment_mobile": "center",
-            "color_scheme": "scheme-1"
+            "color_scheme": "scheme-5"
           }
         },
         "slide_1": {
@@ -48,7 +49,7 @@
         }
       },
       "block_order": [
-        "slide_yBCcVm",
+        "slide_J9VDwb",
         "slide_1"
       ],
       "settings": {
@@ -114,15 +115,15 @@
             "rating": 5,
             "review_count": "100",
             "star_color": "#FFC107",
-            "map_height": 300,
-            "map_border_radius": 14,
+            "map_height": 350,
+            "map_border_radius": 12,
             "max_width": 800,
             "padding": 20,
-            "border_radius": 2,
+            "border_radius": 4,
             "background_color": "#FFFFFF",
             "text_color": "#444444",
-            "title_size": 20,
-            "address_size": 14
+            "title_size": 16,
+            "address_size": 12
           },
           "blocks": {}
         }
@@ -132,11 +133,66 @@
         "ai_gen_block_809cd12_pGUhHq"
       ],
       "settings": {}
+    },
+    "slideshow_QpDhXA": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_WBpJWX": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        },
+        "slide_eMWFqc": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_WBpJWX",
+        "slide_eMWFqc"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
     }
   },
   "order": [
     "slideshow",
     "services",
-    "1767330227dc762de3"
+    "1767330227dc762de3",
+    "slideshow_QpDhXA"
   ]
 }
