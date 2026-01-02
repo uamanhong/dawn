@@ -12,6 +12,23 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "slide_yBCcVm": {
+          "type": "slide",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": true,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
         "slide_1": {
           "type": "slide",
           "settings": {
@@ -31,6 +48,7 @@
         }
       },
       "block_order": [
+        "slide_yBCcVm",
         "slide_1"
       ],
       "settings": {
@@ -46,66 +64,12 @@
     },
     "services": {
       "type": "multicolumn",
-      "blocks": {
-        "service_1": {
-          "type": "column",
-          "settings": {
-            "title": "Fast Service",
-            "text": "<p>Quick turnaround times for your repairs.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "service_2": {
-          "type": "column",
-          "settings": {
-            "title": "Quality Parts",
-            "text": "<p>We use only the highest quality parts.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "service_3": {
-          "type": "column",
-          "settings": {
-            "title": "iPhone Repair",
-            "text": "<p>Screen & Battery replacement for all models.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "service_4": {
-          "type": "column",
-          "settings": {
-            "title": "Screen Repair",
-            "text": "<p>We repair broken screens daily.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "service_5": {
-          "type": "column",
-          "settings": {
-            "title": "Used Phones",
-            "text": "<p>Buy and sell Used Devices.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "service_1",
-        "service_2",
-        "service_3",
-        "service_4",
-        "service_5"
-      ],
       "settings": {
         "title": "Our Services",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
-        "button_label": "Button label",
+        "button_label": "",
         "button_link": "",
         "columns_desktop": 5,
         "column_alignment": "center",
@@ -120,6 +84,26 @@
     "1767330227dc762de3": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_998f4ee_HbrXew": {
+          "type": "ai_gen_block_998f4ee",
+          "settings": {
+            "image_1": "shopify://shop_images/Snipaste_2026-01-01_22-17-12.png",
+            "text_1": "We only use quality relialbeparts.",
+            "image_2": "shopify://shop_images/Snipaste_2026-01-01_22-16-40.png",
+            "text_2": "We offer same day service on most repairs.",
+            "image_3": "shopify://shop_images/Snipaste_2026-01-01_22-17-59.png",
+            "text_3": "We are famous for our screen repair service.",
+            "image_4": "shopify://shop_images/Snipaste_2026-01-01_22-17-45.png",
+            "text_4": "We specialize in Apple products (iPhones & iPads)",
+            "image_5": "shopify://shop_images/Snipaste_2026-01-01_22-18-10.png",
+            "text_5": "Pre-owned phones with warranty.",
+            "spacing": 32,
+            "image_border_radius": 0,
+            "text_size": 14,
+            "text_color": "#444444"
+          },
+          "blocks": {}
+        },
         "ai_gen_block_809cd12_pGUhHq": {
           "type": "ai_gen_block_809cd12",
           "settings": {
@@ -144,6 +128,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_998f4ee_HbrXew",
         "ai_gen_block_809cd12_pGUhHq"
       ],
       "settings": {}
