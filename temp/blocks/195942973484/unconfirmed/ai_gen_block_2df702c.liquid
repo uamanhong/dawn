@@ -1,6 +1,417 @@
+{% doc %}
+  @prompt
+    ramdom shows my product list... with row and comlume number setting.. and to fit the width of my homepages...  
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% liquid
+  assign all_products = collections.all.products
+  assign total_products = all_products.size
+  assign products_to_show = block.settings.rows | times: block.settings.columns_desktop
+  assign displayed_products = ''
+  assign displayed_count = 0
+%}
+
+{% style %}
+  .ai-random-products-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .ai-random-products__container-{{ ai_gen_id }} {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-random-products__heading-{{ ai_gen_id }} {
+    text-align: {{ block.settings.heading_alignment }};
+    margin: 0 0 30px;
+    font-size: {{ block.settings.heading_size }}px;
+    color: {{ block.settings.heading_color }};
+  }
+
+  .ai-random-products__grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    width: 100%;
+  }
+
+  .ai-random-products__item-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    background-color: {{ block.settings.card_background }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-random-products__item-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+  }
+
+  .ai-random-products__image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+
+  .ai-random-products__image-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-random-products__placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-random-products__placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-random-products__info-{{ ai_gen_id }} {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-random-products__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_title_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    text-decoration: none;
+    display: block;
+  }
+
+  .ai-random-products__title-{{ ai_gen_id }}:hover {
+    opacity: 0.8;
+  }
+
+  .ai-random-products__price-{{ ai_gen_id }} {
+    font-size: {{ block.settings.product_price_size }}px;
+    color: {{ block.settings.price_color }};
+    font-weight: 600;
+  }
+
+  .ai-random-products__vendor-{{ ai_gen_id }} {
+    font-size: 12px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.7;
+  }
+
+  .ai-random-products__empty-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-random-products__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_tablet }}, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-random-products__grid-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
+    }
+
+    .ai-random-products__heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.8);
+    }
+  }
+{% endstyle %}
+
+<random-products-{{ ai_gen_id }} class="ai-random-products-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-random-products__container-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-random-products__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+
+    {% if total_products > 0 %}
+      <div class="ai-random-products__grid-{{ ai_gen_id }}">
+        {% for i in (1..products_to_show) %}
+          {% assign random_index = 'now' | date: '%N' | modulo: total_products %}
+          {% assign random_offset = i | times: 7 | modulo: total_products %}
+          {% assign final_index = random_index | plus: random_offset | modulo: total_products %}
+          {% assign product = all_products[final_index] %}
+
+          {% if product %}
+            <div class="ai-random-products__item-{{ ai_gen_id }}">
+              <a href="{{ product.url }}" class="ai-random-products__image-wrapper-{{ ai_gen_id }}">
+                {% if product.featured_image %}
+                  <img
+                    src="{{ product.featured_image | image_url: width: 600 }}"
+                    alt="{{ product.featured_image.alt | escape }}"
+                    class="ai-random-products__image-{{ ai_gen_id }}"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                  >
+                {% else %}
+                  <div class="ai-random-products__placeholder-{{ ai_gen_id }}">
+                    {{ 'product-1' | placeholder_svg_tag }}
+                  </div>
+                {% endif %}
+              </a>
+
+              <div class="ai-random-products__info-{{ ai_gen_id }}">
+                {% if block.settings.show_vendor and product.vendor != blank %}
+                  <div class="ai-random-products__vendor-{{ ai_gen_id }}">{{ product.vendor }}</div>
+                {% endif %}
+
+                <a href="{{ product.url }}" class="ai-random-products__title-{{ ai_gen_id }}">
+                  {{ product.title }}
+                </a>
+
+                {% if block.settings.show_price %}
+                  <div class="ai-random-products__price-{{ ai_gen_id }}">
+                    {{ product.price | money }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="ai-random-products__empty-{{ ai_gen_id }}">
+        No products available to display
+      </div>
+    {% endif %}
+  </div>
+</random-products-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class RandomProducts{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.shuffleProducts();
+      }
+
+      shuffleProducts() {
+        const grid = this.querySelector('.ai-random-products__grid-{{ ai_gen_id }}');
+        if (!grid) return;
+
+        const items = Array.from(grid.children);
+        for (let i = items.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          grid.appendChild(items[j]);
+        }
+      }
+    }
+
+    customElements.define('random-products-{{ ai_gen_id }}', RandomProducts{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Random product list",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured products"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#444444"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Number of rows",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Columns on desktop",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns on tablet",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 8,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Grid gap",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Product card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show price",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "product_title_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "product_price_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Price size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#444444"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#0286e7"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Card border radius",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Random product list"
+    }
+  ]
+}
 {% endschema %}
