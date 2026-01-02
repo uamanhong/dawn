@@ -33,18 +33,19 @@
         "slide_1": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/Slide2_3d7b7a7d-1e6d-4ba9-8678-e45f6d6d54c8.jpg",
             "image_overlay_opacity": 0,
-            "heading": "We Fix Mobile Phones Fast and For Less",
-            "heading_size": "h1",
-            "subheading": "Specializing in Apple, Samsung, and more.",
-            "button_label": "View Services",
-            "link": "shopify://pages/services",
+            "heading": "Discover Top Quality Refurbished Phones and Laptops!",
+            "heading_size": "h2",
+            "subheading": "All Items on Sale Come with Warranty Coverage.",
+            "button_label": "SHOP NOW",
+            "link": "shopify://collections/all",
             "button_style_secondary": false,
             "show_text_box": true,
-            "box_align": "middle-center",
+            "box_align": "middle-right",
             "text_alignment": "center",
             "text_alignment_mobile": "center",
-            "color_scheme": ""
+            "color_scheme": "scheme-5"
           }
         }
       },
