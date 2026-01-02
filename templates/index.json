@@ -55,13 +55,13 @@
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
-        "auto_rotate": false,
+        "slide_height": "small",
+        "slider_visual": "dots",
+        "auto_rotate": true,
         "change_slides_speed": 5,
-        "image_behavior": "none",
+        "image_behavior": "ambient",
         "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "accessibility_info": ""
       }
     },
     "1767330227dc762de3": {
@@ -80,8 +80,8 @@
             "text_4": "We are famous for our screen repair service.",
             "image_5": "shopify://shop_images/Snipaste_2026-01-01_22-17-45.png",
             "text_5": "We specialize in Apple products (iPhones & iPads)",
-            "section_height": 5,
-            "section_height_mobile": 5,
+            "section_height": 0,
+            "section_height_mobile": 0,
             "spacing": 16,
             "image_border_radius": 8,
             "text_size": 14,
@@ -130,7 +130,7 @@
             "heading_size": 26,
             "heading_color": "#444444",
             "rows": 2,
-            "columns_desktop": 4,
+            "columns_desktop": 6,
             "columns_tablet": 3,
             "columns_mobile": "2",
             "grid_gap": 12,
@@ -179,6 +179,24 @@
     },
     "17673334587d8f2078": {
       "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_719d488_fcDg9p": {
+          "type": "ai_gen_block_719d488",
+          "settings": {
+            "spacing_top": 40,
+            "spacing_bottom": 40,
+            "spacing_top_mobile": 24,
+            "spacing_bottom_mobile": 24,
+            "show_line": true,
+            "line_thickness": 1,
+            "line_color": "#e8e8e8"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_719d488_fcDg9p"
+      ],
       "settings": {}
     }
   },
