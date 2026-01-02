@@ -54,7 +54,7 @@
         "slide_J9VDwb"
       ],
       "settings": {
-        "layout": "full_bleed",
+        "layout": "grid",
         "slide_height": "small",
         "slider_visual": "dots",
         "auto_rotate": true,
@@ -129,7 +129,7 @@
           "type": "ai_gen_block_0f2ed23",
           "settings": {
             "image": "shopify://shop_images/prepaid_plan.png",
-            "image_height": 200,
+            "image_height": 300,
             "mobile_image_height": 100,
             "border_radius": 0
           },
@@ -167,13 +167,13 @@
             "show_rating": false,
             "rating": 5,
             "review_count": "100",
-            "star_color": "#FFC107",
+            "star_color": "#ffc107",
             "map_height": 350,
             "map_border_radius": 12,
             "max_width": 800,
             "padding": 20,
             "border_radius": 4,
-            "background_color": "#FFFFFF",
+            "background_color": "#ffffff",
             "text_color": "#444444",
             "title_size": 16,
             "address_size": 12
