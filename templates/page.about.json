@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Dr. Fix",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dr. Fix Cell Phone Repair takes pride in our workmanship. We are famous for our fast service and low prices. Located at 7010-109 St NW, Edmonton.</p><p>We are the mobile phone repair shop in Edmonton since 2011. Dr. Fix Cell Phone Repair offers quick Cellular Phone Hardware and Software Repair Service including screen repair, water damage repair & unlocked. We fix Apple, Samsung, Google, HTC, Motorola, Sony, Blackberry phones.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "desktop_content_position": "center",
+        "content_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "gallery_grid": {
+      "type": "multicolumn",
+      "blocks": {
+        "img_1": {
+          "type": "column",
+          "settings": {
+            "title": "Store Front",
+            "text": "<p>Visit us at our Edmonton location.</p>"
+          }
+        },
+        "img_2": {
+          "type": "column",
+          "settings": {
+            "title": "Repair Station",
+            "text": "<p>Where the magic happens.</p>"
+          }
+        },
+        "img_3": {
+          "type": "column",
+          "settings": {
+            "title": "Accessories",
+            "text": "<p>Wide selection of cases and chargers.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "img_1",
+        "img_2",
+        "img_3"
+      ],
+      "settings": {
+        "title": "Gallery",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "image_width": "full",
+        "image_ratio": "square",
+        "column_alignment": "center",
+        "background_style": "none"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "gallery_grid"
+  ]
+}

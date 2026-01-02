@@ -7,19 +7,59 @@
         "padding_bottom": 36
       }
     },
+    "contact_details": {
+      "type": "rich-text",
+      "blocks": {
+         "heading": {
+           "type": "heading",
+           "settings": {
+             "heading": "Visit Us",
+             "heading_size": "h2"
+           }
+         },
+         "text": {
+           "type": "text",
+           "settings": {
+             "text": "<p><strong>Address:</strong><br>7010-109 St NW, Edmonton, AB T6H 3C1<br>Parking available (street parking 70ave)</p><p><strong>Business Hours:</strong><br>Mon-Sat: 11AM-6PM.<br>Sunday, Statutory Holiday: Closed</p><p><strong>Contact:</strong><br>Phone: (780) 860-6234<br>Email: tech@DrFix.ca</p>"
+           }
+         }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+         "full_width": true,
+         "padding_top": 20,
+         "padding_bottom": 40,
+         "desktop_content_position": "left",
+         "content_alignment": "left"
+      }
+    },
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
+        "heading": "Send us a Message",
+        "heading_size": "h2",
         "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "map_section": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div style='width: 100%; height: 450px;'><iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2370.657579043548!2d-113.4938!3d53.5461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDMyJzQ2LjAiTiAxMTPCsDI5JzM3LjciVw!5e0!3m2!1sen!2sca!4v1600000000000!5m2!1sen!2sca\" width=\"100%\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe></div>",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "main",
-    "form"
+    "contact_details",
+    "form",
+    "map_section"
   ]
 }
