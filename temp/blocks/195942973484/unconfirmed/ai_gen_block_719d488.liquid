@@ -1,6 +1,127 @@
+{% doc %}
+  @prompt
+    add a section space ...  very light color of line?
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-section-spacer-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    padding: {{ block.settings.spacing_top }}px 0 {{ block.settings.spacing_bottom }}px;
+  }
+
+  .ai-section-spacer__line-{{ ai_gen_id }} {
+    width: 100%;
+    height: {{ block.settings.line_thickness }}px;
+    background-color: {{ block.settings.line_color }};
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-section-spacer-{{ ai_gen_id }} {
+      padding: {{ block.settings.spacing_top_mobile }}px 0 {{ block.settings.spacing_bottom_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<section-spacer-{{ ai_gen_id }} class="ai-section-spacer-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.show_line %}
+    <div class="ai-section-spacer__line-{{ ai_gen_id }}"></div>
+  {% endif %}
+</section-spacer-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class SectionSpacer{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+    }
+    customElements.define('section-spacer-{{ ai_gen_id }}', SectionSpacer{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Section spacer",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "spacing_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top spacing (desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "spacing_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom spacing (desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "spacing_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top spacing (mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "spacing_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom spacing (mobile)",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Divider line"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_line",
+      "label": "Show divider line",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "line_thickness",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Line thickness",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Line color",
+      "default": "#e8e8e8"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section spacer"
+    }
+  ]
+}
 {% endschema %}
